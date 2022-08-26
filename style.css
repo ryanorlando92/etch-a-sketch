@@ -40,6 +40,11 @@
     background-color: blanchedalmond;
 }
 
+.palette-js {
+    display: grid;
+    
+}
+
 .right-control-panel {
     grid-area: D;
     width: 3fr;
@@ -53,6 +58,8 @@
 
 .bottom-bar {
     grid-area: E;
+    padding: 1em;
+    text-align: center;
     background-color: aquamarine;
 }
 
