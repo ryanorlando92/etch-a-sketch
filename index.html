@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./style.css" />
-   <script src="./script.js" async></script>
+   <script src="./script.js" defer></script>
    
     <title>Etch - A - Sketch Project!</title>
 </head>
@@ -14,11 +14,13 @@
     <div class="container">
         <div class="header">header</div>
         <div class="left-sidebar">left-sidebar</div>
-        <div class="left-control-panel">control-panel</div>
+        <div class="left-control-panel">
+            <input id="paintColor" type="color">
+        </div>
         <div class="palette" id="canvas"></div>
         <div class="right-control-panel">right-control-panel</div>
         <div class="right-sidebar">right-sidebar</div>
-        <div class="bottom-bar">Size of grid:<input></input><button class="button grid">Submit</button></div>
+        <div class="bottom-bar">Size of grid:<input></input><button class="button">Submit</button></div>
         <div class="footer">foooter</div>
     </div>
     

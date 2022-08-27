@@ -9,7 +9,7 @@
     "F F F F   F F F F    F F F F";
 
     height:98vh;
-    background-color: red;
+    background-color: none;
 
 }
 
@@ -36,8 +36,11 @@
     border-radius: 10px;
     border: 2px solid black;
     box-shadow: 0px 0px 10px black;
-    z-index: 2;
-    background-color: blanchedalmond;
+    
+}
+
+.grid {
+    z-index: 1;
 }
 
 .palette-js {

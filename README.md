@@ -10,14 +10,6 @@
     - CSS Grid
 *Be careful with borders and margins, as they can adjust the size of the squares!*
 
-### “OMG, why isn’t my grid being created???”
-- Did you link your CSS stylesheet?
-- Open your browser’s developer tools.
-    1. Check if there are any errors in the JavaScript console.
-    2. Check your “elements” pane to see if the elements have actually shown up but are somehow hidden.
-    3. Go willy-nilly and add console.log statements in your JavaScript to see if it’s actually being loaded.
-
-
 ## 3. Set up a “hover” effect so that the grid divs change color when your mouse passes over them, leaving a (pixelated) trail through your grid like a pen would.
 *Hint: “Hovering” is what happens when your mouse enters a div and ends when your mouse*
 *leaves it. You can set up event listeners for either of those events as a starting point.*
