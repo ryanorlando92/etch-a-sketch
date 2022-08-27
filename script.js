@@ -50,7 +50,14 @@ function painter() {
     boxes.forEach( (box) => {
         box.addEventListener('mousemove', (e) => {
             e.target.style.background = currentColor;
-            // console.log(e.target.style.background);
+            console.log(e.type);
         });
     }); 
 }
+
+/* 
+
+think about how to make it mousedown && mousemove
+window.addeventlistener('mousedown')
+e.type mouseover & mousedown
+*/
