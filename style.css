@@ -29,7 +29,7 @@
     background-color: bisque;
 }
 
-.palette {
+.canvas {
     grid-area: C;
     height: 640px;
     width: 640px;
@@ -43,7 +43,7 @@
     z-index: 1;
 }
 
-.palette-js {
+.canvas-js {
     display: grid;
     
 }

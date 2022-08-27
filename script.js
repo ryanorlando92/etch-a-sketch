@@ -1,42 +1,56 @@
 
-const palette = document.querySelector('#canvas');
-const paintColor = document.getElementById('paintColor')
+const canvas = document.querySelector('#canvas');
+let num = 16;
 
-let num = 20;
-paletteSize(16);
+let paintColor;
+const defaultColor = '#000000';
+let currentColor = defaultColor;
 
-function paletteSize (num) {
+window.addEventListener('load', startup, false);
+
+function startup() {
+    paintColor = document.querySelector('#paintColor');
+    paintColor.value = defaultColor;
+    paintColor.addEventListener('change', updateColor, false);
+    paintColor.select();
+    canvasSize(16);
+}
+
+function canvasSize (num) {
     if (num > 100) {
-        console.log("error, palette size too large");
+        console.log("error, canvas size too large");
         return;
     }
     
     if (num < 16) {
         console.log("you have chosen less than the minimum");
-        console.log("paletteSize set to 20");
+        console.log("canvasSize set to 16");
         num = 16;
     }
     
-    palette.style.display = "grid";
-    palette.style["grid-template-columns"] = `repeat(${num}, 1fr)`;
-    palette.style["grid-template-rows"] = `repeat(${num}, 1fr)`;
+    canvas.style.display = "grid";
+    canvas.style["grid-template-columns"] = `repeat(${num}, 1fr)`;
+    canvas.style["grid-template-rows"] = `repeat(${num}, 1fr)`;
     
     for (let i = 0; i < (num * num); i++) {
         const div = document.createElement('div');
         div.classList.add('grid');
-        palette.appendChild(div); 
-    }       
-
+        canvas.appendChild(div); 
+    }
     painter();
-                    // e.target.style.background = paintColor;
 }                    
+                    
 
+function updateColor(e) {
+    currentColor = e.target.value;
+}
 
 function painter() {
     const boxes = document.querySelectorAll('.grid');
     boxes.forEach( (box) => {
-        box.addEventListener('click', (e) => {
-            console.log(e)
+        box.addEventListener('mousemove', (e) => {
+            e.target.style.background = currentColor;
+            // console.log(e.target.style.background);
         });
-    });
+    }); 
 }
