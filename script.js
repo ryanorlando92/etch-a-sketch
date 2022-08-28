@@ -1,33 +1,27 @@
 
 const canvas = document.querySelector('#canvas');
-let num = 16;
+const slider = document.getElementById('myRange');
+const sliderOutput = document.getElementById('sliderOutput');
 
-let paintColor;
 const defaultColor = '#000000';
 let currentColor = defaultColor;
 
 window.addEventListener('load', startup, false);
 
+let paintColor;
 function startup() {
     paintColor = document.querySelector('#paintColor');
     paintColor.value = defaultColor;
     paintColor.addEventListener('change', updateColor, false);
     paintColor.select();
-    canvasSize(16);
+    canvasSize(slider.value);
 }
 
 function canvasSize (num) {
-    if (num > 100) {
-        console.log("error, canvas size too large");
-        return;
+    const nodes = canvas.childNodes;
+    for(let i=0; i<nodes.length; i++) {
+        nodes[i].style.background = 'white';
     }
-    
-    if (num < 16) {
-        console.log("you have chosen less than the minimum");
-        console.log("canvasSize set to 16");
-        num = 16;
-    }
-    
     canvas.style.display = "grid";
     canvas.style["grid-template-columns"] = `repeat(${num}, 1fr)`;
     canvas.style["grid-template-rows"] = `repeat(${num}, 1fr)`;
@@ -55,6 +49,11 @@ function painter() {
     }); 
 }
 
+sliderOutput.textContent = `${slider.value} x ${slider.value}`
+slider.oninput = () => {
+    sliderOutput.textContent = `${slider.value} x ${slider.value}`;
+    canvasSize(slider.value);
+}
 /* 
 
 think about how to make it mousedown && mousemove

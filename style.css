@@ -1,3 +1,10 @@
+
+/* 
+* {
+    border: 1px solid red;
+}
+ */
+
 .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -15,7 +22,7 @@
 
 .header {
     grid-area: H;
-    height: 15vh;
+    height: 10vh;
     background-color: antiquewhite;
 }
 
@@ -25,8 +32,12 @@
 }
 
 .left-control-panel {
+    display: flex;
+    padding: 1em;
     grid-area: B;
     background-color: bisque;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .canvas {
@@ -36,11 +47,12 @@
     border-radius: 10px;
     border: 2px solid black;
     box-shadow: 0px 0px 10px black;
+    z-index: 1;
     
 }
 
 .grid {
-    z-index: 1;
+    z-index: 2;
 }
 
 .canvas-js {
@@ -61,9 +73,19 @@
 
 .bottom-bar {
     grid-area: E;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 1em;
-    text-align: center;
     background-color: aquamarine;
+}
+
+.sliderContainer {
+    grid-column: 2 / 3;
+    align-items: center;
+}
+
+.slider {
+    width: 100%;
 }
 
 .footer {

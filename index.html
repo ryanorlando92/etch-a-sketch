@@ -13,17 +13,29 @@
 
     <div class="container">
         <div class="header">header</div>
+
         <div class="left-sidebar">left-sidebar</div>
+
         <div class="left-control-panel">
             <div>
             <label for="paintColor">Color: </label>
             <input id="paintColor" type="color">
             </div>
         </div>
+
         <div class="canvas" id="canvas"></div>
+
         <div class="right-control-panel">right-control-panel</div>
+
         <div class="right-sidebar">right-sidebar</div>
-        <div class="bottom-bar">Size of grid:<input></input><button class="button">Submit</button></div>
+
+        <div class="bottom-bar">
+            <div class="sliderContainer">
+                <input type="range" min="8" max="100" value="16" class="slider" id="myRange">
+                <p>Grid Size: <span id=sliderOutput></span></p>
+            </div>
+        </div>  
+
         <div class="footer">foooter</div>
     </div>
     
