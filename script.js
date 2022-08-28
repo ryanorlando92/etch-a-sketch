@@ -29,24 +29,23 @@ function canvasSize (num) {
     for (let i = 0; i < (num * num); i++) {
         const div = document.createElement('div');
         div.classList.add('grid');
+        div.addEventListener('mouseover', painter);
+        div.addEventListener('mousedown', painter);
         canvas.appendChild(div); 
     }
-    painter();
-}                    
-                    
+}                                   
 
 function updateColor(e) {
     currentColor = e.target.value;
 }
 
-function painter() {
-    const boxes = document.querySelectorAll('.grid');
-    boxes.forEach( (box) => {
-        box.addEventListener('mousemove', (e) => {
-            e.target.style.background = currentColor;
-            console.log(e.type);
-        });
-    }); 
+let mouseDown = false
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+
+function painter(e) {
+    if (e.type === 'mouseover' && !mouseDown) return;
+    e.target.style.background = currentColor;
 }
 
 sliderOutput.textContent = `${slider.value} x ${slider.value}`
@@ -54,9 +53,3 @@ slider.oninput = () => {
     sliderOutput.textContent = `${slider.value} x ${slider.value}`;
     canvasSize(slider.value);
 }
-/* 
-
-think about how to make it mousedown && mousemove
-window.addeventlistener('mousedown')
-e.type mouseover & mousedown
-*/

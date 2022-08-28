@@ -44,15 +44,11 @@
     grid-area: C;
     height: 640px;
     width: 640px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 2px solid black;
     box-shadow: 0px 0px 10px black;
     z-index: 1;
     
-}
-
-.grid {
-    z-index: 2;
 }
 
 .canvas-js {
