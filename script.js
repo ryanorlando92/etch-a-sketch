@@ -53,3 +53,10 @@ slider.oninput = () => {
     sliderOutput.textContent = `${slider.value} x ${slider.value}`;
     canvasSize(slider.value);
 }
+
+/*
+add 'eraser' button
+add 'rainbow button
+add darken option
+add lighten option
+*/
