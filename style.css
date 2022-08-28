@@ -82,6 +82,11 @@
 .sliderContainer {
     grid-column: 2 / 3;
     align-items: center;
+    text-align: center;
+}
+
+.sliderContainer > p {
+    margin: 0;
 }
 
 .slider {

@@ -20,7 +20,7 @@ function startup() {
 function canvasSize (num) {
     const nodes = canvas.childNodes;
     for(let i=0; i<nodes.length; i++) {
-        nodes[i].style.background = 'white';
+        nodes[i].style.background = 'white'; //repaints canvas white when resized
     }
     canvas.style.display = "grid";
     canvas.style["grid-template-columns"] = `repeat(${num}, 1fr)`;
