@@ -61,7 +61,12 @@ slider.oninput = () => {
     canvasSize(slider.value);
 }
 
-
+const reset = document.getElementById('reset');
+reset.addEventListener('click', shake);
+function shake() {
+    canvasSize(slider.value);
+    // do some crazy stuff to make canvas actually shake
+}
 
 const eraser = document.getElementById('eraser');
 eraser.addEventListener('click', erase);

@@ -16,28 +16,39 @@
     "F F F F   F F F F    F F F F";
 
     height:98vh;
-    background-color: none;
+    background-color: beige;
 
 }
 
 .header {
     grid-area: H;
-    height: 10vh;
-    background-color: antiquewhite;
+    display: flex;
+    height: 15vh;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+
 }
 
 .left-sidebar {
     grid-area: A;
-    background-color: beige;
 }
 
 .left-control-panel {
     display: flex;
     padding: 1em;
     grid-area: B;
-    background-color: bisque;
     justify-content: flex-end;
     align-items: center;
+}
+
+.left-control-panel ul {
+    list-style-type: none;
+    padding: 5px;
+}
+
+ul li {
+    margin: 10px;
 }
 
 .canvas {
@@ -48,6 +59,7 @@
     border: 2px solid black;
     box-shadow: 0px 0px 10px black;
     z-index: 1;
+    background-color: white;
     
 }
 
@@ -59,12 +71,10 @@
 .right-control-panel {
     grid-area: D;
     width: 3fr;
-    background-color: lightcyan;
 }
 
 .right-sidebar {
     grid-area: G;
-    background-color: lightgrey;
 }
 
 .bottom-bar {
@@ -72,7 +82,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 1em;
-    background-color: aquamarine;
 }
 
 .sliderContainer {
@@ -92,6 +101,11 @@
 .footer {
     grid-area: F;
     align-self: end;
-    height: 10vh;
+    height: 5vh;
     background-color: lightsalmon;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
 }
